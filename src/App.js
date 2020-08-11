@@ -1,0 +1,23 @@
+import React from 'react';
+import { FeaturedSection } from './components/FeaturedSection'
+import { CategorySection } from './components/CategorySection'
+import { SearchProvider } from './components/SearchContext'
+import { ConfigProvider } from './components/ConfigContext'
+import { SearchBar } from './components/SearchBar'
+import { ConfigEditor } from './components/ConfigEditor'
+
+const App = ({ config }) => {
+
+  return (
+    <ConfigProvider config={config}>
+      <SearchProvider>
+        <SearchBar />
+        <FeaturedSection />
+        <CategorySection />
+        <ConfigEditor />
+      </SearchProvider>
+    </ConfigProvider>
+  )
+}
+
+export default App;
